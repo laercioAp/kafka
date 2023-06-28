@@ -13,6 +13,7 @@ public class StringProducerService {
 
     public void sendMessage(String message) {
         try {
+            log.info("Mensagem sendo enviada {}", message);
             kafkaTemplate.send("str-topic", message);
             log.info("Mensagem enviada com suceso{}", message);
         } catch (Exception ex) {
